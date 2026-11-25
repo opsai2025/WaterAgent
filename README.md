@@ -14,29 +14,7 @@ WaterAgent is a Streamlit application that uses Sentinel-2 imagery and Google Ea
 
 ## 🛰️ From satellite imagery to insights
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Arial, sans-serif", "fontSize": "20px", "lineColor": "#52748a"}, "flowchart": {"nodeSpacing": 35, "rankSpacing": 45, "padding": 20}}}%%
-flowchart TB
-    A["🗺️  Select a water body and time period"]
-    B["🛰️  Find Sentinel-2 images with Earth Engine"]
-    C["☁️  Mask clouds, snow and non-water areas"]
-    D["🔬  Calculate water-quality indicators for each scene<br/>Turbidity · Chlorophyll · CDOM"]
-    E["🗓️  Create monthly median composites"]
-    F["📥  Download results and resume interrupted analysis"]
-    G["📊  Explore maps, charts and Excel exports"]
-    H["✨  Generate AI-assisted summaries and chat<br/>when configured"]
-
-    A --> B --> C --> D --> E --> F --> G --> H
-
-    style A fill:#e3f2fd,stroke:#176b9a,stroke-width:2px,color:#103b56
-    style B fill:#e3f2fd,stroke:#176b9a,stroke-width:2px,color:#103b56
-    style C fill:#e0f4ef,stroke:#147b69,stroke-width:2px,color:#12483f
-    style D fill:#e0f4ef,stroke:#147b69,stroke-width:2px,color:#12483f
-    style E fill:#e0f4ef,stroke:#147b69,stroke-width:2px,color:#12483f
-    style F fill:#e0f4ef,stroke:#147b69,stroke-width:2px,color:#12483f
-    style G fill:#fff1d6,stroke:#a85a09,stroke-width:2px,color:#663700
-    style H fill:#fff1d6,stroke:#a85a09,stroke-width:2px,color:#663700
-```
+![Four-step WaterAgent workflow: select a water body, obtain Sentinel-2 images, analyze turbidity, chlorophyll and CDOM, and explore maps, charts and optional AI insights.](docs/images/wateragent-workflow.png)
 
 Sentinel-2 scenes are processed in Google Earth Engine, including cloud, snow, and water masking. The application calculates the indicators for each scene, builds monthly composites, and presents the results in an interactive dashboard. Satellite indicators are estimates and should be interpreted in context alongside suitable field measurements.
 
