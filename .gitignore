@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+.water_monitor_data/
+.env
+.env.*
+!.env.example
+.wq_monitor_cache/
+wq_monitor_cache/
+earth_engine_key_base64.txt
+code_water_monitoring_version_*_1405.py

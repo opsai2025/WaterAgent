@@ -1,0 +1,34 @@
+# Dependencies for the modular water monitoring application (version 18)
+# Install: python -m pip install -r requirements.txt
+# Versions are intentionally unpinned; this is not an environment lockfile.
+
+# Dashboard, interactive maps, and visualization
+streamlit
+folium
+streamlit-folium
+branca
+Jinja2
+matplotlib
+Pillow
+
+# Satellite processing, geospatial data, and statistical analysis
+earthengine-api
+google-auth
+httplib2
+numpy
+pandas
+rasterio
+shapely
+requests
+python-dotenv
+psycopg[binary]==3.3.9
+openpyxl
+pymannkendall
+
+# AI expert, OpenAI-compatible model integration, and search tools
+langchain
+langchain-core
+langchain-openai
+langchain-tavily
+langgraph
+openai
