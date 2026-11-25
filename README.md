@@ -1,22 +1,39 @@
-﻿# WaterAgent
+# 🛰️ WaterAgent
 
 **Explore how water quality changes over time, from a map to a meaningful picture.**
 
 WaterAgent is a Streamlit application that uses Sentinel-2 imagery and Google Earth Engine to monitor water bodies. Draw an area on the map, choose a time period, and explore monthly water-quality indicators, charts, and summaries. The current application interface is in Persian.
 
-## What you can do
+## 🌊 What you can do
 
-- **Map a water body:** draw, save, and select a monitoring area.
-- **Explore three indicators:** turbidity (NDTI), chlorophyll (NDCI), and colored dissolved organic matter (CDOM).
-- **Follow changes over time:** view monthly maps, charts, statistics, and data-coverage information.
-- **Pick up where you left off:** reopen saved local analyses and resume interrupted processing.
-- **Share results:** export analysis results to Excel and use the AI-assisted summary and chat features when configured.
+- 🗺️ **Map a water body:** draw, save, and select a monitoring area.
+- 🔬 **Explore three indicators:** turbidity (NDTI), chlorophyll (NDCI), and colored dissolved organic matter (CDOM).
+- 📈 **Follow changes over time:** view monthly maps, charts, statistics, and data-coverage information.
+- 🔄 **Pick up where you left off:** reopen saved local analyses and resume interrupted processing.
+- 📊 **Share results:** export analysis results to Excel and use the AI-assisted summary and chat features when configured.
 
-## How it works
+## 🛰️ From satellite imagery to insights
+
+```mermaid
+flowchart LR
+    A["🗺️ Select a water body<br/>and time period"] --> B["🛰️ Find Sentinel-2 imagery<br/>with Earth Engine"]
+    B --> C["☁️ Mask clouds, snow<br/>and non-water areas"]
+    C --> D["🔬 Calculate indicators<br/>for each scene"]
+    D --> E["🗓️ Build monthly<br/>median composites"]
+    E --> F["📥 Download and<br/>recover results"]
+    F --> G["📊 Explore maps, charts<br/>and Excel exports"]
+    G --> H["✨ AI-assisted summaries<br/>and chat, when configured"]
+    classDef source fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e;
+    classDef process fill:#e0f2f1,stroke:#0f766e,color:#134e4a;
+    classDef result fill:#fef3c7,stroke:#d97706,color:#78350f;
+    class A,B source;
+    class C,D,E,F process;
+    class G,H result;
+```
 
 Sentinel-2 scenes are processed in Google Earth Engine, including cloud, snow, and water masking. The application calculates the indicators for each scene, builds monthly composites, and presents the results in an interactive dashboard. Satellite indicators are estimates and should be interpreted in context alongside suitable field measurements.
 
-## Getting started
+## 🚀 Getting started
 
 You will need Python 3.12, access to Google Earth Engine, and the appropriate Google Cloud project and credentials. The project has been developed and tested in Ubuntu/WSL.
 
@@ -40,14 +57,14 @@ streamlit run water_monitoring.py --server.address 127.0.0.1
 
 The administrator credentials are requested interactively. Then open `http://localhost:8501` in your browser.
 
-## Good to know
+## 🧭 Good to know
 
 - Local accounts and analysis history are stored under `.water_monitor_data` by default; back them up together and keep them private.
 - Large monitoring areas can exceed Earth Engine's direct download limit; automatic tiling is not yet implemented.
 - `cloud_preview` is a temporary preview, not durable Supabase storage. Production deployment and persistent cloud storage require further work; see [deployment notes](DEPLOY_POSIT_SUPABASE.md).
 - The project is under active development. For implementation details and current work, see [the redesign handoff](REDESIGN_HANDOFF.md) and [the original detailed README in Persian](README.fa.md). The Persian notes refer to a local design document that is not included in this repository.
 
-## Project layout
+## 🗂️ Project layout
 
 | Path | Purpose |
 | --- | --- |
